@@ -34,7 +34,7 @@ func BasicAuthHandler(fnValid ValidCredFunc,
 	return func(w http.ResponseWriter, r *http.Request) {
 		// authenticate the authorization
 		auth := r.Header.Get("Authorization")
-		if len(auth) < 6 || auth[:6] != "Basic " {
+		if len(auth) < 6 || !strings.HasPrefix(auth, "Basic ") {
 			rejectAuthBasic(w)
 			return
 		}
