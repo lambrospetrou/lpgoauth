@@ -4,6 +4,10 @@ LP Go Authorization library
 # Inspiration
 The library here is inspired by the implementation of the Martini framework but without the requirement for their own Martini context object. This way we can use Basic Authorization with existing handlers without problems.
 
+# To-Do
+- Check FormValues if Authorization header is not present (form values should have name 'user' & 'pass')
+- Add Token based authorization
+
 # Usage
 
     package main
